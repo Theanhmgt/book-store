@@ -1,6 +1,6 @@
 
 # @name getoneuser
-GET https://json-server-sand.vercel.app/api/users
+GET https://book-store-api-sand.vercel.app/api/data
 ###
 
 
@@ -9,7 +9,7 @@ GET https://json-server-sand.vercel.app/api/users
 
 # @name getAllProDuctByID
 
-GET https://json-server-sand.vercel.app/api/users?email=admin1@gmail.com
+GET https://json-server-sand.vercel.app/api/data
 
 ###
 

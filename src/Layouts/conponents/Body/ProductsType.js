@@ -17,7 +17,7 @@ function ProductsType({ name, category, img }) {
 
     useEffect(() => {
         const fetAPI = async () => {
-            const responceJSON = await fetch(`http://localhost:5000/api/data?categorySlug=${category}&_page=1&_limit=${isTabletOrMobile ? 2 : 4}`)
+            const responceJSON = await fetch(`https://book-store-api-eta.vercel.app/api/data?categorySlug=${category}&_page=1&_limit=${isTabletOrMobile ? 2 : 4}`)
             const responce = await responceJSON.json()
             const { data } = responce
             setData(data)

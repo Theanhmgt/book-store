@@ -19,6 +19,10 @@ const cx = classNames.bind(style)
 function FilterNav({ filter, setFilter }) {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' })
     const [tempFilter, setTempFilter] = useState(filter)
+    const [toogleList, setToogleList] = useState({
+        category: false,
+        price: false,
+    })
     const handleSetFilter = () => {
         const { _color, _category, ...otherFilter } = tempFilter
         setFilter(otherFilter)
@@ -31,32 +35,47 @@ function FilterNav({ filter, setFilter }) {
         })
         setToogleList({ ...toogleList, price: !toogleList.price })
     }
+    const handleSetCategoryFilter = (e) => {
+        setTempFilter({
+            ...tempFilter,
+            categorySlug: e.target.value,
+        })
+        setToogleList({ ...toogleList, category: !toogleList.category })
+    }
     const handleClearFilter = () => {
-        const { _category, newPrice_gte, newPrice_lte, ...otherFilter } = tempFilter
+        const { categorySlug, newPrice_gte, newPrice_lte, ...otherFilter } = tempFilter
         setTempFilter(otherFilter)
         setFilter(otherFilter)
     }
     const getQtyFilter = (filter) => {
         return Object.keys(filter).reduce((agr, key) => {
-            if (key.includes('_gte') || key.includes('_color') || key.includes('_category')) {
+            if (key.includes('_gte') || key.includes('categorySlug')) {
                 return agr + 1
             }
             return agr
         }, 0)
     }
-    const [toogleList, setToogleList] = useState({
-        category: false,
-    })
+
     const categoryList = [
         {
-            title: 'CUSTOM PCS',
-            value: 'custompcs',
+            title: 'Ebook',
+            value: 'Ebook',
             id: 1
         },
         {
-            title: 'MSI ALL-IN-ONE',
-            value: 'masiallinone',
+            title: 'Sách Ôn Thi THPT Quốc Gia',
+            value: 'Sách Luyện Thi THPT Quốc Gia',
             id: 2
+        },
+        {
+            title: 'Kiến Thức Bách Khoa',
+            value: 'Kiến thức',
+            id: 3
+        },
+        {
+            title: 'Sách Kỹ Năng Sống',
+            value: 'Kỹ Năng Sống',
+            id: 4
         }
     ]
     const priceList = [
@@ -154,10 +173,7 @@ function FilterNav({ filter, setFilter }) {
                     <option
                         key={ele.id}
                         value={ele.value}
-                        onClick={e => setTempFilter({
-                            ...tempFilter,
-                            _category: e.target.value
-                        })}
+                        onClick={e => handleSetCategoryFilter(e)}
                     >
                         {ele.title}
                     </option>

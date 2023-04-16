@@ -11,7 +11,8 @@ function Nav({ bars, handle }) {
     const MAIN_NAV = [
         {
             display: "Ebook",
-            path: "/filter"
+            path: "/filter",
+            value: "Ebook"
         },
         {
             display: "Sách Mới",
@@ -19,6 +20,7 @@ function Nav({ bars, handle }) {
         },
         {
             display: "Sách Luyện Thi THPT Quốc Gia",
+            value: "Sách Luyện Thi THPT Quốc Gia",
             path: "/filter"
         },
         {
@@ -29,7 +31,7 @@ function Nav({ bars, handle }) {
         {
             display: "Sách Kiến Thức Bách Khoa",
             path: "/filter",
-            value: "Kiến Thúc Bách Khoa"
+            value: "Kiến thức"
         }
     ]
 

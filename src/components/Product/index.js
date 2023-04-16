@@ -175,7 +175,7 @@ function Product({
             {isSerachResult && (
                 <div className={cx('wrapper-isSearch')} onClick={() => handleClickItem(data.id)}>
                     <div className={cx('conditon')}>
-                        {data.condition.includes("in stock")
+                        {/* {data.condition.includes("in stock")
                             ? <div>
                                 <BsFillCheckCircleFill className={cx('stock-icon')} />
                                 <div className={cx('tilte')}>{data.condition}</div>
@@ -184,11 +184,11 @@ function Product({
                                 <BsFillTelephoneXFill className={cx('phone-icon')} />
                                 <div className={cx('tilte')}>{data.condition}</div>
                             </div>
-                        }
+                        } */}
                     </div>
                     <div className={cx('content')}>
                         <div className={cx('left-isSearch')}>
-                            <div className={cx('img-isSearch')} ><img src={`/${data.images[0]}`} alt="img" /></div>
+                            <div className={cx('img-isSearch')} ><img src={data.images[0]} alt="img" /></div>
                             <div className={cx("reviews")}>
                                 <div className={cx("stars")}>
                                     {

@@ -22,7 +22,7 @@ export const productsSlice = createSlice({
 
 export const productsFetch = createAsyncThunk("products/productsFetch",
     async () => {
-        const res = await fetch('http://localhost:5000/api/data')
+        const res = await fetch('https://book-store-api-eta.vercel.app/api/data')
         const data = await res.json()
         return data
     }

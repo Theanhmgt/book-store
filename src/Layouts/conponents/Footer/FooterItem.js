@@ -5,7 +5,6 @@ import { memo } from "react";
 import style from './Footer.module.scss';
 const cx = classNames.bind(style)
 function FooterItem({ ele }) {
-
     return (
         ele.map((item, index) => (
             <li key={index}>

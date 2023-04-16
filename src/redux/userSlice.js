@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify"
 const initialUser = {
     value: JSON.parse(localStorage.getItem("userData")) || {

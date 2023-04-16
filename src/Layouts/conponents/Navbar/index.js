@@ -30,7 +30,8 @@ function Navbar() {
     const MAIN_NAV = [
         {
             display: "Ebook",
-            path: "/filter"
+            path: "/filter",
+            value: "Ebook"
         },
         {
             display: "Sách Mới",
@@ -38,6 +39,7 @@ function Navbar() {
         },
         {
             display: "Sách Luyện Thi THPT Quốc Gia",
+            value: "Sách Luyện Thi THPT Quốc Gia",
             path: "/filter"
         },
         {
@@ -48,7 +50,7 @@ function Navbar() {
         {
             display: "Sách Kiến Thức Bách Khoa",
             path: "/filter",
-            value: "Kiến Thúc Bách Khoa"
+            value: "Kiến thức"
         }
     ]
     const handleShowInput = () => {
