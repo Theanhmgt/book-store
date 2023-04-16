@@ -8,7 +8,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { setId } from "~/redux/filterSlice";
 import { ProductById } from "./ProductById";
 import style from './ProducView.module.scss'
-import slide from '~/assets/images/detail-slide.png'
 import slide2 from '~/assets/images/bookbanner.jpg'
 
 const cx = classNames.bind(style)
