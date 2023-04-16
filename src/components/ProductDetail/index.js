@@ -110,7 +110,9 @@ function ProductDetail({ data }) {
                         </Col>
                         <Col sm={12} md={6} className={cx('right')}>
                             <div className={cx('img')}>
-                                <img src={`/${img}`} alt="alt" />
+                                {/* <img src={`/${img}`} alt="alt" /> */}
+                                <img src={img} alt="alt" />
+
                                 <div className={cx("icons")}>
                                     <HiOutlineHeart className={cx('icon')} />
                                     <BsFillBarChartFill className={cx('icon')} />

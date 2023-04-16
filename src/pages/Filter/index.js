@@ -54,7 +54,7 @@ function Filter() {
             try {
                 setIsLoading(true)
                 const paramstring = queryString.stringify(filter)
-                const requestURL = `https://json-server-sand.vercel.app/api/data?${paramstring}`
+                const requestURL = `http://localhost:5000/api/data?${paramstring}`
                 const response = await fetch(requestURL);
                 const responseJSON = await response.json()
                 const { data, pagination } = responseJSON
@@ -138,7 +138,7 @@ function Filter() {
                                     outlineGray
                                     onClick={() => setShowDesc(!showDesc)}
                                 >
-                                    {showDesc ? "Hiden" : "More"}
+                                    {showDesc ? "Đóng" : "Xem Thêm"}
                                 </Button>
                             </div>
                         </>
