@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 
 import Carousel from "./Carousel";
 import style from './Carousels.module.scss'
-import slide from '~/assets/images/slide1.png'
+// import slide from '~/assets/images/slide1.png'
+import slice1 from '~/assets/images/slides/slice1.png'
+import slice2 from '~/assets/images/slides/slice1.jpg'
 
 const cx = classNames.bind(style)
 
@@ -19,23 +21,17 @@ const Carousels = () => {
     };
     return (
         <Container className={cx('wrapper')}>
-            <Slider {...settings}>
-                <div>
-                    <img src={slide} alt="slide" />
-                </div>
-                <div>
-                    <img src={slide} alt="slide" />
-                </div>
-                <div>
-                    <img src={slide} alt="slide" />
-                </div>
-            </Slider>
+            {/* <Slider {...settings}>
+            </Slider> */}
+            <div>
+                <img src={slice2} alt="slide" />
+            </div>
             <div className={cx('head')}>
-                <div className={cx('left')}>New Products</div>
-                <Link className={cx('right')} to="/filter">See all products</Link>
+                <div className={cx('left')}>SÁCH MỚI</div>
+                <Link className={cx('right')} to="/filter">Xem tất cả sách</Link>
             </div>
 
-            <Carousel />
+            {/* <Carousel /> */}
         </Container>
     );
 }

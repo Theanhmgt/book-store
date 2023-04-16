@@ -23,7 +23,7 @@ export const userSlice = createSlice({
             )
             if (itemIndex < 0) {
                 state.value.cart.cartItems.push({ ...action.payload, cartQuantity: 1 })
-                toast.success(`Added ${action.payload.name} to cart`, {
+                toast.success(`Đã thêm ${action.payload.name} vào giỏ hàng`, {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -34,16 +34,6 @@ export const userSlice = createSlice({
                 });
             } else {
                 state.value.cart.cartItems[itemIndex].cartQuantity += 1;
-                toast.info(`Increased ${action.payload.name} quantity`, {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                }
-                );
             }
         },
         removeCart: (state, action) => {
@@ -51,7 +41,7 @@ export const userSlice = createSlice({
                 (item) => item.id !== action.payload.id
             )
             state.value.cart.cartItems = newCart
-            toast.error(`Remove ${action.payload.name} from cart`, {
+            toast.error(`Đã xoá ${action.payload.name} khỏi giỏ hàng`, {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,

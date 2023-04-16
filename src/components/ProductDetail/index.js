@@ -38,7 +38,7 @@ function ProductDetail({ data }) {
                 cartQuantity: qty
             }))
         } else {
-            toast.warn(`Please login to add product`, {
+            toast.warn(`Vui lòng đăng nhập để thêm sản phẩm`, {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -59,18 +59,18 @@ function ProductDetail({ data }) {
                             className={detail ? ' ' : cx('linkActive')}
                             onClick={() => setDetail(false)}
                         >
-                            About Product
+                            Thông tin sản phẩm
                         </Link>
                         <Link
                             className={detail ? cx('linkActive') : ' '}
                             onClick={() => setDetail(true)}
                         >
-                            Details
+                            Chi Tiết
                         </Link>
                     </div>
                     <div className={cx('control')}>
                         <div className={cx('price')}>
-                            <p>On Sale from</p>
+                            <p>Giá đang bán</p>
                             <span>{Formatter.format(total)}</span>
                         </div>
                         <div className={cx('quanti')}>
@@ -80,7 +80,7 @@ function ProductDetail({ data }) {
                                 <IoIosArrowDown onClick={() => handleUpdateQty('minus')} />
                             </div>
                         </div>
-                        <Button primary onClick={e => handleAddItem(data, e)} >Add to Cart</Button>
+                        <Button primary onClick={e => handleAddItem(data, e)} >Thêm vào giỏ hàng</Button>
                     </div>
                 </div>
             </Container>
@@ -89,7 +89,7 @@ function ProductDetail({ data }) {
                     <Row className={cx('sm-flex-reserve')}>
                         <Col sm={12} md={6} className={cx('left')}>
                             <h1 className={cx('name')}>{data.name}</h1>
-                            <p className={cx('title')}>Be the first to review this product</p>
+                            <p className={cx('title')}>Trở thành người bình luận đầu tiên của sản phẩm này</p>
                             {detail ? (
                                 <ul className={cx('core-list')}>
                                     {data.detail.map((info, index) => (
@@ -104,8 +104,8 @@ function ProductDetail({ data }) {
                                 <div className={(img === data.images[2]) ? cx('type-active') : ' '} onClick={() => (setImg(data.images[2]))}></div>
                             </div>
                             <div className={cx('quote')}>
-                                Have a Question
-                                <Link to={'/contac'} className={cx('link-contact')}>Contact Us</Link>
+                                Bạn có thắc mắc
+                                <Link to={'/contac'} className={cx('link-contact')}>  Liên hệ với chúng tôi</Link>
                             </div>
                         </Col>
                         <Col sm={12} md={6} className={cx('right')}>

@@ -16,7 +16,7 @@ function CommingSoon() {
 
     return (<div className={cx('wraaper')}>
         <h1>COMMING SOON</h1>
-        <Button outlineGray to={'/'} >Back to Home</Button>
+        <Button outlineGray to={'/'} >Trở về trang chủ</Button>
     </div>);
 }
 

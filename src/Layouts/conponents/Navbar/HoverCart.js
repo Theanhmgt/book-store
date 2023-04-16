@@ -33,14 +33,14 @@ function Hovercart({ cart, hasUser }) {
                 placement='bottom-end'
                 render={attrs => (
                     <div className={cx('yourcart')} tabIndex="-1" {...attrs}>
-                        <h3 className={cx('heading')}>My cart</h3>
-                        <p className={cx('total')}>{cartTotalQuantity} item in cart</p>
-                        <Button to={hasUser ? "/yourcart" : '/login'} outline >View or Edit Your Cart</Button>
+                        <h3 className={cx('heading')}>Giỏ hàng của tôi</h3>
+                        <p className={cx('total')}>{cartTotalQuantity} sản phẩm</p>
+                        <Button to={hasUser ? "/yourcart" : '/login'} outline >Xem và sửa giỏ hàng</Button>
                         <div className={cx('items')}>
                             {(!hasUser || cartItems.length === 0) && (
                                 <div className={cx('nodata')}>
                                     <AiOutlineInbox />
-                                    <h1>No data</h1>
+                                    <h1>Không có dữ liệu</h1>
                                 </div>
                             )}
                             {hasUser && (
@@ -49,7 +49,7 @@ function Hovercart({ cart, hasUser }) {
                                 ))
                             )}
                         </div>
-                        <Button primary to={hasUser ? "/yourcart" : '/login'} >Go to Checkout</Button>
+                        <Button primary to={hasUser ? "/yourcart" : '/login'} >Tiến hành thanh toán</Button>
                     </div>
                 )}
             >

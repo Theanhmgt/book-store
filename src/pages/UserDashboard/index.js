@@ -17,15 +17,15 @@ function UserDashboard() {
     const { pathname } = useLocation();
     const Data = [
         {
-            title: 'Account Information',
+            title: 'Thông tin Tài khoản',
             component: AccountInfo
         },
         {
-            title: 'Address Book',
+            title: 'Địa chỉ giao hàng',
             component: AddressBook
         },
         {
-            title: 'My Orders',
+            title: 'Đơn hàng của tôi',
             component: MyOrders
         },
     ]
@@ -33,13 +33,13 @@ function UserDashboard() {
     const RightComponent = currentData.component
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = 'My Dashboard'
+        document.title = 'Tài khoản của tôi'
     }, [pathname]);
 
     return (
         <Container className={cx('wrapper')}>
-            {!isMobile && <Pageing pages={[{ title: 'My Dashboard', path: 'dashboard' }]} />}
-            <h1 className={cx('title')}>My Dashboard</h1>
+            {!isMobile && <Pageing pages={[{ title: 'Tài khoản', path: 'dashboard' }]} />}
+            <h1 className={cx('title')}>Tài khoản của tôi</h1>
             <Row>
                 <Col lg={3} sm={12}>
                     <div className={cx('wrapper-lef-col')}>
@@ -54,12 +54,12 @@ function UserDashboard() {
                         ))}
                     </div>
                     <div className={cx('background')} >
-                        <h1>Compare Products</h1>
-                        <p>You have no items to compare</p>
+                        <h1>So sánh sản phẩm</h1>
+                        <p>Bạn không có sản phẩm để so sánh</p>
                     </div>
                     <div className={cx('background')} >
-                        <h1>My Wish List</h1>
-                        <p>You have no items in your wish list</p>
+                        <h1>Sản phẩm yêu thích của tôi</h1>
+                        <p>Bạn không có sản phẩm yêu thích</p>
                     </div>
                 </Col>
                 <Col lg={9} sm={12}>

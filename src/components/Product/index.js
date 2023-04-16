@@ -37,7 +37,7 @@ function Product({
                 ...data
             }))
         } else {
-            toast.warn(`Please login to add product`, {
+            toast.warn(`Vui lòng đăng nhập để thêm sản phẩm`, {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,

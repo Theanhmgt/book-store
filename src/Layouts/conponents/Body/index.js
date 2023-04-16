@@ -4,14 +4,17 @@ import InforAuthor from "./inforAuthor";
 import ProductsType from "./ProductsType";
 import Review from "../Review";
 import Brands from "./Brands";
-import lap from '~/assets/images/laptoptype.png'
-import des from '~/assets/images/destoptype.png'
+import ebook from '~/assets/images/ebooktype.png'
+import ebook2 from '~/assets/images/ebooktype2.png'
+import book from '~/assets/images/bookcategory.jpg'
+
+
 function Body() {
     return (
         <Container>
             <InforAuthor />
-            <ProductsType name={'MSI Laptops'} img={lap} category={'laptop-gaming'} />
-            <ProductsType name={'Desktops'} img={des} category={'pc-gaming'} />
+            <ProductsType name={'Ebook'} img={book} category={'laptop-gaming'} />
+            <ProductsType name={'Sách Mới'} img={ebook2} category={'pc-gaming'} />
             <Brands />
             <Review />
         </Container>

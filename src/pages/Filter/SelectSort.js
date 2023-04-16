@@ -20,7 +20,7 @@ function SelectSort({ values, filter, setFilter }) {
 
     return (
         <div className={cx('control')}>
-            <label htmlFor="sort">Sort By: </label>
+            <label htmlFor="sort">Lọc bởi: </label>
             <select id="sort" onChange={e => handleChangeSort(e)} >
                 {
                     values.map((value, index) => (

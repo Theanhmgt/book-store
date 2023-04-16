@@ -27,12 +27,12 @@ function Cart() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = 'YOUR CART'
+        document.title = 'GIỎ HÀNG CỦA BẠN'
     }, [])
 
     const handleClear = () => {
         dispath(clearCart())
-        toast.error(`Cleared shopping cart`, {
+        toast.error(`Đã xoá toàn bộ sản phẩm`, {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -45,27 +45,27 @@ function Cart() {
 
     const checkoutItems = [
         {
-            title: "Subtotal",
+            title: "Giá Trị Sách",
             ship: cart.cartItems.length > 0 ? `${cartTotalAmount}` : 0
         },
         {
-            title: "Shipping",
+            title: "Giá ship",
             ship: 21
         },
         {
-            title: "Tax",
+            title: "Thuế",
             ship: 1.91
         },
         {
-            title: "Order Total",
+            title: "Tổng giá trị đơn hàng",
             ship: cart.cartItems.length > 0 ? `${cartTotalAmount + 21 + 1.91}` : 0
         }
     ]
 
     return (
         <Container className={cx('wrapper')}>
-            <Pageing pages={[{ title: 'Cart', path: 'yourcart' }]} />
-            <h1 className={cx('Cart-Head')}>Shopping Cart</h1>
+            <Pageing pages={[{ title: 'Giỏ Hàng', path: 'yourcart' }]} />
+            <h1 className={cx('Cart-Head')}>Đơn hàng</h1>
             {/* Products */}
             {cart.cartItems.length > 0 ? (
                 <Row>
@@ -74,11 +74,11 @@ function Cart() {
                             !isMobile &&
                             <div className={cx('titles')}>
                                 <Row>
-                                    <Col md={2}>Item</Col>
+                                    <Col md={2}>Sản phẩm</Col>
                                     <Col md={4}></Col>
-                                    <Col md={2}>Price</Col>
-                                    <Col md={1}>Quanty</Col>
-                                    <Col md={2}>Subtotal</Col>
+                                    <Col md={2}>Giá</Col>
+                                    <Col md={1}>Số Sách</Col>
+                                    <Col md={2}>Tổng giá</Col>
                                     <Col md={1}></Col>
                                 </Row>
                             </div>
@@ -87,13 +87,13 @@ function Cart() {
                             <Product isInCart key={product.id} data={product} />
                         ))}
                         <div className={cx('buttons')}>
-                            <Button to='/' outlineGray>Continue Shopping</Button>
-                            <Button onClick={handleClear} black>Clear Shopping Cart</Button>
+                            <Button to='/' outlineGray>Tiếp tục mua hàng</Button>
+                            <Button onClick={handleClear} black>Xoá toàn bộ sản phẩm</Button>
                         </div>
                     </Col>
 
                     <Col lg={3} sm={12} className={cx('right')}>
-                        <h1 className={cx('right-head')}>Summary</h1>
+                        <h1 className={cx('right-head')}>Đơn hàng</h1>
                         <ul className={cx('menu')}>
                             {
                                 checkoutItems.map((item, index) => (
@@ -104,13 +104,13 @@ function Cart() {
                                 ))
                             }
                         </ul>
-                        <Button primary>Proceed to Checkout</Button>
+                        <Button primary>Tiến hành thanh toán</Button>
                     </Col>
                 </Row>
             ) : (
                 <div className={cx('nodata')}>
                     <AiOutlineInbox />
-                    <h1>No data</h1>
+                    <h1>Không có dữ liệu</h1>
                 </div>
             )}
         </Container>

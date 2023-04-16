@@ -18,7 +18,7 @@ function MyOrders() {
             ) : (
                 <div className={cx('nodata')}>
                     <AiOutlineInbox />
-                    <h1>No data</h1>
+                    <h1>Không có dữ liệu</h1>
                 </div>
             )}
 

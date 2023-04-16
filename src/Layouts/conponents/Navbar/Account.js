@@ -22,11 +22,11 @@ function Account({ user }) {
 
     let ACCOUNT = [
         {
-            title: "Create an account",
+            title: "Tạo tài khoản mới",
             path: '/register'
         },
         {
-            title: user.uid ? "Log out" : "Sign in",
+            title: user.uid ? "Đăng xuất" : "Đăng nhập",
             path: user.uid ? "/" : "/login"
         },
     ]
@@ -34,15 +34,15 @@ function Account({ user }) {
     if (user.uid) {
         const hasUser = [
             {
-                title: "My Account",
+                title: "Tài khoản của tôi",
                 path: '/dashboard'
             },
             {
-                title: "My wish list(0)",
+                title: "Sản phẩm yêu thích(0)",
                 path: '/comming'
             },
             {
-                title: "Compate (0)",
+                title: "So sánh(0)",
                 path: '/comming'
             }
 
@@ -53,7 +53,7 @@ function Account({ user }) {
     }
 
     const handleClick = (title) => {
-        if (title === 'Log out') {
+        if (title === 'Đăng xuất') {
             LogOut(dispathLogoutUserInfo, dispathLogoutCart)
         }
         if (visible) {

@@ -10,31 +10,23 @@ const cx = classNames.bind(style)
 function Nav({ bars, handle }) {
     const MAIN_NAV = [
         {
-            display: "Laptops",
+            display: "Ebook",
             path: "/filter"
         },
         {
-            display: "Desktop PCs",
+            display: "Sách Mới",
             path: "/filter"
         },
         {
-            display: "Netwoking Devices",
+            display: "Sách Luyện Thi THPT Quốc Gia",
             path: "/filter"
         },
         {
-            display: "Printers & Scanners",
+            display: "Sách Ngoại Ngữ",
             path: "/filter"
         },
         {
-            display: "PC Parts",
-            path: "/filter"
-        },
-        {
-            display: "All Other Products",
-            path: "/filter"
-        },
-        {
-            display: "Repairs",
+            display: "Sách Kiến Thức Bách Khoa",
             path: "/filter"
         }
     ]
@@ -63,7 +55,7 @@ function Nav({ bars, handle }) {
                         </div>
                     ))}
 
-                    <Button primary to="/comming" onClick={handle}>Our Deals</Button>
+                    <Button primary to="/comming" onClick={handle}>Hot Deals</Button>
                 </div>
             </div>
             <div

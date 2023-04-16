@@ -4,15 +4,16 @@ import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
 import { useMediaQuery } from "react-responsive";
 import { Row, Col } from "react-bootstrap";
 
-import img from '~/assets/images/chair.png'
 import Button from "~/components/Button";
 import style from "./Filter.module.scss"
-import msi from '~/assets/images/brands/msi.png';
-import adata from '~/assets/images/brands/adata.png';
-import gigabyte from '~/assets/images/brands/gigabyte.png';
-import hp from '~/assets/images/brands/hp.png';
-import razez from '~/assets/images/brands/razez.png';
-import roccat from '~/assets/images/brands/roccat.png';
+
+import booklogo1 from '~/assets/images/brands/book-logo1.jpg'
+import booklogo2 from '~/assets/images/brands/book-logo2.jpg'
+import booklogo3 from '~/assets/images/brands/book-logo3.jpg'
+import booklogo4 from '~/assets/images/brands/book-logo4.jpg'
+import booklogo5 from '~/assets/images/brands/book-logo5.jpg'
+import booklogo6 from '~/assets/images/brands/book-logo6.jpg'
+
 const cx = classNames.bind(style)
 
 function FilterNav({ filter, setFilter }) {
@@ -31,7 +32,7 @@ function FilterNav({ filter, setFilter }) {
         setToogleList({ ...toogleList, price: !toogleList.price })
     }
     const handleClearFilter = () => {
-        const { _color, _category, newPrice_gte, newPrice_lte, ...otherFilter } = tempFilter
+        const { _category, newPrice_gte, newPrice_lte, ...otherFilter } = tempFilter
         setTempFilter(otherFilter)
         setFilter(otherFilter)
     }
@@ -45,8 +46,6 @@ function FilterNav({ filter, setFilter }) {
     }
     const [toogleList, setToogleList] = useState({
         category: false,
-        price: false,
-        color: false
     })
     const categoryList = [
         {
@@ -129,41 +128,41 @@ function FilterNav({ filter, setFilter }) {
     ]
     const brands = [
         {
-            name: msi,
-            href: "https://www.vn.msi.com",
+            name: booklogo1,
+            href: "",
         },
         {
-            name: roccat,
-            href: "https://ca.roccat.com/",
+            name: booklogo2,
+            href: "",
         },
         {
-            name: razez,
-            href: "https://www.razer.com/",
+            name: booklogo3,
+            href: "",
         },
         {
-            name: gigabyte,
-            href: "https://www.gigabyte.com/vn",
+            name: booklogo4,
+            href: "",
         },
         {
-            name: hp,
-            href: "https://www.hp.com/us-en/shop/cat/laptops",
+            name: booklogo5,
+            href: "",
         },
         {
-            name: adata,
-            href: "https://www.adata.com/vn/",
+            name: booklogo6,
+            href: "",
         }
     ]
     return (
         <>
             <div className={cx('background')} >
-                {!isMobile && <h1>Filter</h1>}
-                {!isMobile && <Button outline onClick={handleClearFilter}>Clear Filter</Button>}
+                {!isMobile && <h1>Lọc</h1>}
+                {!isMobile && <Button outline onClick={handleClearFilter}>Dọn dẹp bộ lọc</Button>}
 
                 <div
                     className={cx('heading')}
                     onClick={() => setToogleList({ ...toogleList, category: !toogleList.category })}
                 >
-                    <h2>Category</h2>
+                    <h2>Thể loại</h2>
                     {toogleList.category ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
                 </div>
                 {toogleList.category && categoryList.map(ele => (
@@ -184,7 +183,7 @@ function FilterNav({ filter, setFilter }) {
                     className={cx('heading')}
                     onClick={() => setToogleList({ ...toogleList, price: !toogleList.price })}
                 >
-                    <h2>Prices</h2>
+                    <h2>Giá</h2>
                     {toogleList.price ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
                 </div>
 
@@ -197,42 +196,14 @@ function FilterNav({ filter, setFilter }) {
                         {ele.title}
                     </option>
                 ))}
-
-                <div
-                    className={cx('heading')}
-                    onClick={() => setToogleList({ ...toogleList, color: !toogleList.color })}
-                >
-                    <h2>Color</h2>
-                    {toogleList.color ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-                </div>
-                {toogleList.color && (
-                    <div className={cx('colors')}>
-                        <input
-                            type="color"
-                            defaultValue='black'
-                            onClick={e => setTempFilter({
-                                ...tempFilter,
-                                _color: e.target.value
-                            })}
-                        />
-                        <input
-                            type="color"
-                            defaultValue="#ff0000"
-                            onClick={e => setTempFilter({
-                                ...tempFilter,
-                                _color: e.target.value
-                            })}
-                        />
-                    </div>
-                )}
                 {isMobile && <Button outline onClick={handleClearFilter}>Clear Filter</Button>}
-                <Button primary onClick={handleSetFilter} >Apply filters {getQtyFilter(tempFilter) > 0 && `( ${getQtyFilter(tempFilter)} )`} </Button>
+                <Button primary onClick={handleSetFilter}>Áp dụng lọc {getQtyFilter(tempFilter) > 0 && `( ${getQtyFilter(tempFilter)} )`} </Button>
             </div>
             {!isMobile && (
                 <>
                     <div className={cx('brands')}>
-                        <h1>Brands</h1>
-                        <Button outlineGray>All brands</Button>
+                        <h1>Thương hiệu</h1>
+                        <Button outlineGray>Xem tất cả</Button>
                     </div>
                     <Row >
                         {brands.map((brand, index) => (
@@ -240,15 +211,12 @@ function FilterNav({ filter, setFilter }) {
                         ))}
                     </Row>
                     <div className={cx('background')} >
-                        <h1>Compare Products</h1>
-                        <p>You have no items to compare</p>
+                        <h1>So sánh sách</h1>
+                        <p>Bạn đang không có sách để so sánh</p>
                     </div>
                     <div className={cx('background')} >
-                        <h1>My Wish List</h1>
-                        <p>You have no items in your wish list</p>
-                    </div>
-                    <div className={cx('img')}>
-                        <img src={img} alt="alt" />
+                        <h1>Sách yêu thích</h1>
+                        <p>Bạn không có sách yêu thích</p>
                     </div>
                 </>
             )}

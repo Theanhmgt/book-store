@@ -1,47 +1,48 @@
 import classNames from "classnames/bind";
 
 import style from "./Body.module.scss";
-import msi from '~/assets/images/brands/msi.png';
-import adata from '~/assets/images/brands/adata.png';
-import gigabyte from '~/assets/images/brands/gigabyte.png';
-import hp from '~/assets/images/brands/hp.png';
-import razez from '~/assets/images/brands/razez.png';
-import roccat from '~/assets/images/brands/roccat.png';
+
+import booklogo1 from '~/assets/images/brands/book-logo1.jpg'
+import booklogo2 from '~/assets/images/brands/book-logo2.jpg'
+import booklogo3 from '~/assets/images/brands/book-logo3.jpg'
+import booklogo4 from '~/assets/images/brands/book-logo4.jpg'
+import booklogo5 from '~/assets/images/brands/book-logo5.jpg'
+import booklogo6 from '~/assets/images/brands/book-logo6.jpg'
 
 const cx = classNames.bind(style)
 function Brands() {
 
-    const bands = [
+    const brands = [
         {
-            name: msi,
-            href: "https://www.vn.msi.com",
+            name: booklogo1,
+            href: "",
         },
         {
-            name: roccat,
-            href: "https://ca.roccat.com/",
+            name: booklogo2,
+            href: "",
         },
         {
-            name: razez,
-            href: "https://www.razer.com/",
+            name: booklogo3,
+            href: "",
         },
         {
-            name: gigabyte,
-            href: "https://www.gigabyte.com/vn",
+            name: booklogo4,
+            href: "",
         },
         {
-            name: hp,
-            href: "https://www.hp.com/us-en/shop/cat/laptops",
+            name: booklogo5,
+            href: "",
         },
         {
-            name: adata,
-            href: "https://www.adata.com/vn/",
+            name: booklogo6,
+            href: "",
         }
     ]
 
     return (
         <div className={cx('wrapper-brand')}>
             {
-                bands.map((brand, index) =>
+                brands.map((brand, index) =>
                 (
                     <a href={brand.href} className={cx('brand-link')} key={index}>
                         <img src={brand.name} alt="name" />

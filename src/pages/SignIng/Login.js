@@ -51,18 +51,18 @@ function Login() {
             id: 1,
             name: "email",
             type: "email",
-            placeholder: "Your email",
+            placeholder: "Email của bạn",
             label: "Email",
-            errormessage: "It should be a valid email address",
+            errormessage: "Hãy nhập email của bạn",
             required: true,
         },
         {
             id: 2,
             name: "password",
             type: "password",
-            placeholder: "Your password",
-            label: "Password",
-            errormessage: "Password should be 8-20 characters and include at least 1 number",
+            placeholder: "Mật khẩu",
+            label: "Mật khẩu",
+            errormessage: "Mật khẩu phải có từ 8-20 kí tự và bao gồm ít nhất 1 chữ số.",
             // pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
             pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
             required: true,
@@ -87,7 +87,7 @@ function Login() {
             .then(unwrapResult)
             .then(resp => {
                 if (resp === -1) {
-                    toast.warn(`Account not found`, {
+                    toast.warn(`Không tìm thấy tài khoản`, {
                         position: "top-right",
                         autoClose: 2000,
                         hideProgressBar: false,
@@ -104,13 +104,13 @@ function Login() {
     }
     return (
         <Container className={cx("wrapper")}>
-            {status === 'loading' && <LoadingSpinner />}
+            {/* {status === 'loading' && <LoadingSpinner />} */}
             <Pageing pages={[{ title: 'Login', path: 'login' }]} />
-            <h1 className={cx("heading")}>Login</h1>
+            <h1 className={cx("heading")}>Đăng nhập</h1>
             <Row className="justify-content-around">
                 <Col md={5} sm={12} className={cx("box")}>
-                    <h1 className={cx("head")}>Registered Customers</h1>
-                    <p className={cx("desc")}>If you have an account, sign in with your email address.</p>
+                    <h1 className={cx("head")}>Đăng ký thành viên</h1>
+                    <p className={cx("desc")}>Nếu bạn đã có tài khoản, hãy đăng nhập bằng tài khoản của bạn.</p>
                     <form onSubmit={handleSumit}>
                         {inputs.map((input) => (
                             <FormInput
@@ -122,13 +122,13 @@ function Login() {
                         ))}
                         <div>
                             <Button primary>Sign In</Button>
-                            <p className={cx("left-foot")}>Forgot Your Password?</p>
+                            <p className={cx("left-foot")}>Quên mật khẩu?</p>
                         </div>
                     </form>
                     <div className={cx("orther-login")}>
                         <div className={cx("head-orther-login")}>
                             <div className={cx("line-through")}></div>
-                            <div>Or login with</div>
+                            <div>Hoặc đăng nhập với</div>
                             <div className={cx("line-through")}></div>
                         </div>
                         <div className={cx("btns")}>
@@ -138,14 +138,14 @@ function Login() {
                     </div>
                 </Col>
                 <Col md={5} sm={12} className={cx("box")}>
-                    <h1 className={cx("head")}>New Customer?</h1>
-                    <p className={cx("desc")}>Creating an account has many benefits:</p>
+                    <h1 className={cx("head")}>Thành viên mới?</h1>
+                    <p className={cx("desc")}>Tạo tai khoản cùng nhiều lợi ích:</p>
                     <ul className={cx("desc-list")}>
-                        <li>Check out faster </li>
-                        <li>Keep more than one address</li>
-                        <li>Track orders and more</li>
+                        <li>Nhận ưu đãi sớm nhất</li>
+                        <li>Khám phá nhiều tính năng mới</li>
+                        <li>Đặt và nhận hàng dễ dàng</li>
                     </ul>
-                    <Button to={"/register"} primary>Create An Account</Button>
+                    <Button to={"/register"} primary>Tạo tài khoản</Button>
                 </Col>
             </Row>
         </Container>

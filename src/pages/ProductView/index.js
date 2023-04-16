@@ -9,6 +9,8 @@ import { setId } from "~/redux/filterSlice";
 import { ProductById } from "./ProductById";
 import style from './ProducView.module.scss'
 import slide from '~/assets/images/detail-slide.png'
+import slide2 from '~/assets/images/bookbanner.jpg'
+
 const cx = classNames.bind(style)
 function ProductView() {
     // const { pathname } = useLocation();
@@ -36,17 +38,14 @@ function ProductView() {
                         <Col sm={12} md={6}>
                             <div className={cx('slider-desc')}>
                                 <div className={cx('slider-heading')}>
-                                    Outplay the Competittion
+                                    Đọc sách - Đầu tư cho sự phát triển cá nhân
                                 </div>
-                                <div className={cx('slider-title')}>
-                                    Experience a 40% boost in computing from last generation. MSI Desktop equips the 10th Gen. Intel® Core™ i7 processor with the upmost computing power to bring you an unparalleled gaming experience.
-                                    *Performance compared to i7-9700. Specs varies by model.
-                                </div>
+                                <div className={cx('slider-title')}>Đọc sách không chỉ là một cách thư giãn mà còn mang lại nhiều lợi ích cho sự phát triển cá nhân. Từ việc cải thiện khả năng ngôn ngữ, tăng trí nhớ, đến việc mở rộng tầm nhìn và cải thiện kỹ năng tư duy, đọc sách là một cách tuyệt vời để đầu tư cho bản thân. Ngoài ra, đọc sách cũng giúp giảm stress, tăng sự tập trung và tránh xa khỏi màn hình máy tính, điện thoại. Với các đầu sách chất lượng, bạn có thể tìm hiểu thêm về các lĩnh vực khác nhau và mở rộng kiến thức của mình. Hãy dành thời gian cho việc đọc sách và bạn sẽ thấy những kết quả tích cực mà nó mang lại cho sự phát triển của bạn.</div>
                             </div>
                         </Col>
                         <Col sm={12} md={6}>
                             <div className={cx('slider-img')}>
-                                <img src={slide} alt="alt" />
+                                <img src={slide2} alt="alt" />
                             </div>
                         </Col>
                     </Row>

@@ -5,7 +5,6 @@ export const filterSlice = createSlice({
     initialState: {
         category: '',
         price: '',
-        color: '',
         search: '',
         id: '',
     },
@@ -13,7 +12,6 @@ export const filterSlice = createSlice({
         setFilters: (state, action) => {
             state.category = action.payload.category
             state.price = action.payload.price
-            state.color = action.payload.color
         },
         setSerach: (state, action) => {
             state.search = action.payload

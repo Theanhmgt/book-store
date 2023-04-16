@@ -35,7 +35,7 @@ function ProductsType({ name, category, img }) {
                         <div className={cx('title')}>
                             <p>{name}</p>
                         </div>
-                        <Link to={"/filter"} className={cx('link')} >See all prodcuts</Link>
+                        <Link to={"/filter"} className={cx('link')} >Xem tất cả</Link>
                     </div>
                 </Col>
                 <Col lg={10} md={9} sm={12} >

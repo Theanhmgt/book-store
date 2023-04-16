@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth, getAdditionalUserInfo } from "firebase/auth";
+import { toast } from "react-toastify"
 
 import { collection, query, where, getDocs, doc, setDoc } from "firebase/firestore";
 import { GoogleLogin, FaceBookLogin } from '~/redux/authSlice';
@@ -67,7 +68,6 @@ export const loginWithFirebase = async (userInfoDispatch, userCartDispatch, navi
         }
     }
     auth.onAuthStateChanged(user => {
-        console.log(user)
         if (user) {
             (async () => {
                 const { uid } = user.providerData[0]
@@ -126,6 +126,15 @@ export const LogOut = (dispatchLogoutUser, dispatchLogoutCart) => {
     dispatchLogoutUser()
     dispatchLogoutCart()
     auth.signOut()
+    toast.success(`Đăng xuất thành công`, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
 }
 
 export { db, app, auth }

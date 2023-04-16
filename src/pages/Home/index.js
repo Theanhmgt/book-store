@@ -10,7 +10,7 @@ function Home() {
         window.scrollTo(0, 0);
     }, [pathname]);
     useEffect(() => {
-        document.title = 'MSI Store'
+        document.title = 'Book Store'
     }, [])
     return (
         <>

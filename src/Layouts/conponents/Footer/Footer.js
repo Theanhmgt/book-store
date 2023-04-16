@@ -13,47 +13,40 @@ function FooterInfors() {
     let isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const [columns, setColumns] = useState([
         {
-            title: 'Information',
+            title: 'Thông tin',
             items: [
-                'About Us', 'About Zip', 'Privacy Policy', 'Search Terms',
-                'Orders and Returns', 'Contact Us', 'Advanced Search Newsletter',
+                'Về chúng tối', 'Mã bưu điện', 'Công cụ tìm kiếm',
+                'Đơn đặt hàng và trả lại', 'Liên hệ với chúng tôi'
             ],
             show: !isTabletOrMobile,
             id: 1
         },
         {
-            title: 'PC Parts ',
+            title: 'Danh mục và sản phẩm nổi bật',
             items: [
-                'Add On Cards', 'Hard Drives (Internal)', 'Graphic Cards',
-                'Keyboards / Mice', 'Cases / Power Supplies / Cooling', 'RAM (Memory)'
-            ],
-            show: !isTabletOrMobile,
-            id: 2
-        },
-        {
-            title: 'Desktop PCs',
-            items: [
-                'Custom PCs', 'Servers', 'MSI All-In-One PCs', 'HP/Compaq PCs',
-                'ASUS PCs', 'Tecs PCs'
+                'Sách Luyện Thi THPT Quốc Giá', 'Sách Tham Khảo Lớp 10',
+                ' Sách Luyện Thi THPT Quốc Gia Môn Toán',
+                ' Sách Luyện Thi THPT Quốc Gia Môn Văn',
+                ' Sách Luyện Thi THPT Quốc Gia Môn Anh'
             ],
             show: !isTabletOrMobile,
             id: 3
         },
         {
-            title: 'Laptops',
+            title: 'Chính sách',
             items: [
-                'Evryday Use Notebooks', 'Servers', 'MSI Workstation Series',
-                'Tablets and Pads', 'Netbooks', 'Infinity Gaming Notebooks',
+                'Phương thức thanh toán', 'Chính sách vận chuyển', 'Chính sách đổi trả',
+                'Chính sách bảo mật'
             ],
             show: !isTabletOrMobile,
             id: 4
         },
         {
-            title: 'Address',
+            title: 'Địa chỉ',
             items: [
-                'Address: 305 La Trobe St, Melbourne 3000', ''
-                , 'Phones: (00) 1234 5678', 'We are open: Monday-Thursday: 9:00 AM - 5:30 PM',
-                'Friday: 9:00 AM - 6:00 PM', 'Saturday: 11:00 AM - 5:00 PM',
+                'Địa chỉ: 307 Nguyễn Kiệm, P3.Q.Gò Vấp TP.HCM', ''
+                , 'Phones: (00) 1234 5678', 'Giờ mở của: T2-T5: 9:00 AM - 5:30 PM',
+                'T6: 9:00 AM - 6:00 PM', 'T7: 11:00 AM - 5:00 PM',
                 'E-mail: theanhmgt66@gmail.com'
             ],
             show: !isTabletOrMobile,
@@ -74,14 +67,14 @@ function FooterInfors() {
                     <Row>
                         <Col md={6} sm={12}>
                             <div className={cx('left')}>
-                                <p>Sign Up To Our Newsletter.</p>
-                                <p>Be the first to hear about the latest offers.</p>
+                                <p>Đăng ký để nhận bản tin mới từ chúng tôi.</p>
+                                <p>Hãy trở thành người đầu tiên nghe về các ưu đãi mới nhất.</p>
                             </div>
                         </Col>
                         <Col md={6} sm={12}>
                             <div className={cx('right')}>
-                                <input placeholder="Your Email" />
-                                <Button primary >Subcribe</Button>
+                                <input placeholder="Email của bạn" />
+                                <Button primary >Đăng ký</Button>
                             </div>
                         </Col>
                     </Row>
@@ -90,7 +83,7 @@ function FooterInfors() {
                     <Row>
                         {
                             columns.map((column, index) => (
-                                <Col lg={2} md={12} key={index}>
+                                <Col lg={3} md={12} key={index}>
                                     <div className={cx('col-heading')} onClick={() => handleShow(column.id)}>
                                         <span>{column.title}</span>
                                         {column.show ? <RiArrowUpSLine className="d-block d-lg-none" /> : <RiArrowDownSLine className="d-block d-lg-none" />}

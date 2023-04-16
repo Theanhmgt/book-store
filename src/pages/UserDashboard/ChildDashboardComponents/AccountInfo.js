@@ -92,11 +92,11 @@ function AccountInfo() {
 
     return (
         <div className={cx('wrapper')}>
-            {status === 'loading' && <LoadingSpinner />}
-            <div className={cx('title')}>Account Information</div>
+            {/* {status === 'loading' && <LoadingSpinner />} */}
+            <div className={cx('title')}>Thông tin tài khoản</div>
             <Row>
                 <Col lg={4}>
-                    <div className={cx('sub-title')}>Contact Information</div>
+                    <div className={cx('sub-title')}>Thông tin liên lạc</div>
                     <div className={cx('body')}>
                         {changeInfo.changeUsername ? (
                             <form>
@@ -122,7 +122,7 @@ function AccountInfo() {
                         )}
                     </div>
                     <div className={cx('change-info')}>
-                        <span onClick={() => handleChangeInfo('changeUsername')}>{changeInfo.changeUsername ? 'Save' : 'Edit'}</span>
+                        <span onClick={() => handleChangeInfo('changeUsername')}>{changeInfo.changeUsername ? 'Lưu' : 'Sửa'}</span>
                         <span
                             onClick={() => handleChangeInfo('changePassword')}
                             className={cx(isUserLoginedWithGoogle && 'disible-edit')}
@@ -138,14 +138,14 @@ function AccountInfo() {
                     </div>
                 </Col>
                 <Col lg={4}>
-                    <div className={cx('sub-title')}>Newsletters</div>
-                    <div className={cx('body')}><div className={cx('content')}>You don't subscribe to our newsletter.</div></div>
+                    <div className={cx('sub-title')}>Bài báo</div>
+                    <div className={cx('body')}><div className={cx('content')}>Bạn không theo dõi bất kì kênh nào.</div></div>
                     <div className={cx('change-info')}>
-                        <span className={cx('disible-edit')}>Edit</span>
+                        <span className={cx('disible-edit')}>Sủa</span>
                     </div>
                 </Col>
                 <Col lg={4}>
-                    <div className={cx('sub-title')}>My Avata</div>
+                    <div className={cx('sub-title')}>Ảnh đại diện</div>
                     <div className={cx('body')}>
                         {changeInfo.changeAvata ? (
                             <div className={cx('avatas')}>
@@ -173,9 +173,9 @@ function AccountInfo() {
                         )}
                     </div>
                     <div className={cx('change-info')}>
-                        <span onClick={() => handleChangeInfo('changeAvata')}>{changeInfo.changeAvata ? 'Save' : 'Edit'}</span>
+                        <span onClick={() => handleChangeInfo('changeAvata')}>{changeInfo.changeAvata ? 'Lưu' : 'Sửa'}</span>
                         {changeInfo.changeAvata && (
-                            <span onClick={() => setChangeInfo({ changeUsername: false, changePassword: false, changeAvata: false })}>Close</span>
+                            <span onClick={() => setChangeInfo({ changeUsername: false, changePassword: false, changeAvata: false })}>Đóng</span>
                         )}
                     </div>
                 </Col>

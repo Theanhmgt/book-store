@@ -11,7 +11,7 @@ const cx = classNames.bind(style)
 function Pageing({ pages }) {
     return (
         <div className={cx('wrapper-link')}>
-            <Link to="/" className={cx('link')} >Home</Link>
+            <Link to="/" className={cx('link')} >Trang chú</Link>
             {
                 pages.map((ele, ind) => (
                     <Fragment key={ind}>

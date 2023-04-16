@@ -101,7 +101,7 @@
 .background {
     background-color: var(--whiteF5F);
     padding: 20px 16px;
-    margin-top: 7px;
+    margin: 7px 0px;
 
     @include media-breakpoint-down(md) {
         background-color: var(--whiteFFF);

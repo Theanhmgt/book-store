@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
 import { Row, Col } from "react-bootstrap";
-import { BsHeadset } from "react-icons/bs";
-import { FaRegUser } from "react-icons/fa";
-import { AiTwotoneTag } from "react-icons/ai";
+import { RiRefund2Fill } from "react-icons/ri";
+import { MdOutlineDeliveryDining } from "react-icons/md";
+import { MdRealEstateAgent } from "react-icons/md";
 import { useLocation } from "react-router-dom";
 
 import style from './Footer.module.scss';
@@ -12,19 +12,19 @@ function Features() {
 
     const features = [
         {
-            title: "Product Support",
-            desc: "Up to 3 years on-site warranty available for your peace of mind.",
-            Icon: BsHeadset
+            title: "ĐẢM BẢO SÁCH THẬT",
+            desc: "CHÚNG TÔI NÓI KHÔNG VỚI SÁCH GIẢ, SÁCH NHÁI",
+            Icon: MdRealEstateAgent
         },
         {
-            title: "Personal Account",
-            desc: "With big discounts, free delivery and a dedicated support specialist.",
-            Icon: FaRegUser
+            title: "FREE SHIP CHO ĐƠN HÀNG",
+            desc: "300.000 (TPHCM) - 500.000 (TỈNH/THÀNH KHÁC)",
+            Icon: MdOutlineDeliveryDining
         },
         {
-            title: "Amazing Savings",
-            desc: "Up to 70% off new Products, you can be sure of the best price.",
-            Icon: AiTwotoneTag
+            title: "ĐỔI TRẢ TRONG 7 NGÀY",
+            desc: "SÁCH HƯ HỎNG, DẬP MÓP SÁCH DO VẬN CHUYỂN",
+            Icon: RiRefund2Fill
         }
     ]
 

@@ -31,9 +31,9 @@ function Register() {
             id: 1,
             name: "username",
             type: "text",
-            placeholder: "Username",
-            errormessage: "Username should be 3-16 characters and shouldn't include any special character!",
-            label: "Username",
+            placeholder: "Tên của bạn...",
+            errormessage: "Tên của bạn cần từ 3-16 kí tự và không chứa bất kì ký tự đặc biệt!",
+            label: "Tên của bạn",
             pattern: "^[A-Za-z0-9]{3,16}$",
             required: true,
         },
@@ -41,18 +41,18 @@ function Register() {
             id: 2,
             name: "email",
             type: "email",
-            placeholder: "Your email",
-            label: "Email",
-            errormessage: "It should be a valid email address",
+            placeholder: "Email của bạn...",
+            label: "Email của bạn",
+            errormessage: "Hãy nhập email của bạn",
             required: true,
         },
         {
             id: 3,
             name: "password",
             type: "password",
-            placeholder: "Your password",
-            label: "Password",
-            errormessage: "Password should be 8-20 characters and include at least 1 number",
+            placeholder: "Mật khẩu...",
+            label: "Mật khẩu",
+            errormessage: "Mật khẩu phải có từ 8-20 kí tự và bao gồm ít nhất 1 chữ số.",
             // pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
             pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
             required: true,
@@ -61,9 +61,9 @@ function Register() {
             id: 4,
             name: "confirmPassword",
             type: "password",
-            placeholder: "Confirm password",
-            label: "Confirm password",
-            errormessage: "Passwords don't match!",
+            placeholder: "Nhập lại mật khẩu...",
+            label: "Nhập lại mật khẩu",
+            errormessage: "Mật khẩu không khớp!",
             pattern: values.password,
             required: true,
         }
@@ -93,7 +93,7 @@ function Register() {
             .then(unwrapResult)
             .then(resp => {
                 if (resp === -1) {
-                    toast.warn(`Account already exists`, {
+                    toast.warn(`Tài khoản đã tồn tại`, {
                         position: "top-right",
                         autoClose: 2000,
                         hideProgressBar: false,
@@ -103,7 +103,7 @@ function Register() {
                         progress: undefined,
                     });
                 } else {
-                    toast.success(`Successful registration, redirecting to homepage`, {
+                    toast.success(`Đăng kí thành công, đang chuyển đến trang chủ`, {
                         position: "top-right",
                         autoClose: 2000,
                         hideProgressBar: false,
@@ -123,11 +123,11 @@ function Register() {
         <Container className={cx("wrapper")}>
             {status === 'loading' && <LoadingSpinner />}
             <Pageing pages={[{ title: 'Register', path: 'register' }]} />
-            <h1 className={cx("heading")}>Register</h1>
+            <h1 className={cx("heading")}>Đăng kí</h1>
             <Row className="justify-content-around">
                 <Col md={7} sm={12} className={cx("box")}>
-                    <h1 className={cx("head")}>Registered Customers</h1>
-                    <p className={cx("desc")}>If you have an account, sign in with your email address.</p>
+                    <h1 className={cx("head")}>Đăng kí thành viên</h1>
+                    <p className={cx("desc")}>Nếu bạn đã có tài khoản, hãy đăng nhập bằng tài khoản của bạn.</p>
                     <form onSubmit={handleSubmit}>
                         {inputs.map((input) => (
                             <FormInput
@@ -159,8 +159,8 @@ function Register() {
                             </div>
                         </div>
                         <div>
-                            <Button primary>Create</Button>
-                            <Link to="/login" className={cx("left-foot")}>Already have an account?</Link>
+                            <Button primary>Đăng kí</Button>
+                            <Link to="/login" className={cx("left-foot")}>Bạn đã có tài khoản?</Link>
                         </div>
                     </form>
                 </Col>

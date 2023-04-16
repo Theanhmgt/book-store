@@ -26,6 +26,7 @@ function Filter() {
     const [showDesc, setShowDesc] = useState(false)
     const [showNavFillter, setShowNavFillter] = useState(!isMobile)
     const [product, setProduct] = useState([])
+
     const [pagination, setPagination] = useState({
         _page: 1,
         _limit: (isMobile && 12) || (isTabletOrMobile && 9) || 12,
@@ -45,11 +46,8 @@ function Filter() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        document.title = 'Tất cả sản phẩm'
     }, [product]);
-
-    useEffect(() => {
-        document.title = 'All our products'
-    }, [])
 
     useEffect(() => {
         async function fetchAPI() {
@@ -76,28 +74,28 @@ function Filter() {
     return (
         <Container className={cx('wrapper')}>
             {isLoading && <LoadingSpinner />}
-            <Pageing pages={[{ title: 'Laptops', path: 'filter' }]} />
+            <Pageing pages={[{ title: 'Tất cả sách', path: 'filter' }]} />
             <Row>
                 {!isMobile && (
                     <Col lg={2} md={3}>
                         <div className={cx('back')}>
-                            <button onClick={() => navigate('/')}>{'< Back'}</button>
+                            <button onClick={() => navigate('/')}>{'< Trở về'}</button>
                         </div>
                     </Col>
                 )}
                 <Col lg={10} md={9} sm={12}>
                     <div className={cx('sort-head')}>
-                        {!isMobile ? <span>Items 1- {product.length} of {pagination._totalRows}</span> :
+                        {!isMobile ? <span>Số sách 1- {product.length} của {pagination._totalRows}</span> :
                             <div
                                 className={cx('showOnMobile')}
                                 onClick={() => setShowNavFillter(!showNavFillter)}
                             >
-                                <p>Filter</p>
+                                <p>Lọc</p>
                             </div>}
 
                         <div className={cx('sort-control')}>
                             <SelectSort
-                                values={['Position', 'Prices']}
+                                values={['Mặc định', 'Giá']}
                                 filter={filter}
                                 setFilter={setFilter}
                             />
@@ -130,13 +128,11 @@ function Filter() {
                             />
                             <div className={cx('description')} >
                                 <div className={cx('content', showDesc ? "show-desc" : "hiden-desc")}>
-                                    <p>MSI has unveiled the Prestige Series line of business-class and gaming notebooks. Tuned for color accuracy, the Prestige Series also leverages True Color Technology, which allows users to adjust the display profile to best fit their computing needs.
+                                    <p>Book Store xuất hiện trên Facebook từ năm 2023, chúng tôi đã từng bước khẳng định được giá trị và uy tín trong cộng đồng những người yêu sách. Với mong muốn là một điểm đến lý tưởng của các độc giả, để tìm được cho mình những cuốn sách yêu thích. Đó có thể là sách mới, các ấn bản giới hạn hoặc là sách cũ mà bạn tìm kiếm đã lâu.
 
-                                        There are six different screen profiles, which are tuned for gaming, reducing eye fatigue, sRGB color accuracy, increasing clarity for words and lines, reducing harmful blue light, and optimizing contrast for watching movies.
-                                        Given the various display profiles and discrete graphics chip, the Prestige Series notebooks can be used for various design work as well as for office tasks given that the screen can be adjusted for better clarity, color accuracy, or for eye strain reduction. Users working with video or 3D rendering will appreciate the "movie mode" for which contrast is increased.
+                                        Book Store là nhà phân phối chính thức của các nhà xuất bản, nhà phát hành sách trên toàn quốc. Được sự tín nhiệm của các nhà xuất bản, chúng tôi cũng là đơn vị phân phối độc quyền một số ấn bản giới hạn và đặc biệt, điển hình như bộ sách Việt Nam danh tác do Nhã Nam phát hành.
 
-                                        Home users or students can benefit from the "anti-blue" and the "office mode" options, both of which are designed to reduce eye strain. This is helpful when working on the computer for extended periods of time. Additionally, in their down time, students can also use the "gamer mode" to increase the screen brightness.
-                                    </p>
+                                        Từ tháng 3/2023, chúng tôi thành lập Công ty TNHH Book Store. Để mở rộng kênh phân phối đến các quý độc giả trên toàn quốc cùng một số kế hoạch phát hành sách khác. Sự ủng hộ đông đảo của các độc giả chính là động lực để chúng tôi phát triển bền vững trong tương lai.</p>
                                 </div>
                                 <Button
                                     outlineGray
@@ -149,7 +145,7 @@ function Filter() {
                     ) : (!isLoading &&
                         <div className={cx('nodata')}>
                             <AiOutlineInbox />
-                            <h1>No data</h1>
+                            <h1>Không có dữ liệu</h1>
                         </div>
                     )}
                 </Col>

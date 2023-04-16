@@ -50,7 +50,7 @@
 .title {
     font-size: 22px;
     font-weight: 700;
-    color: var(--whiteFFF);
+    color: var(--black);
 
     @include media-breakpoint-down(sm) {
         font-size: 18px;
@@ -62,7 +62,7 @@
     line-height: 15px;
     position: absolute;
     bottom: 32px;
-    color: #fff;
+    color: var(--black);
     text-decoration: underline;
     opacity: 0.8;
 
