@@ -7,13 +7,13 @@ import { collection, query, where, getDocs, doc, setDoc } from "firebase/firesto
 import { GoogleLogin, FaceBookLogin } from '~/redux/authSlice';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC83f0lUBlx2346DJoyb0Vx3xj9CUAb2wA",
-    authDomain: "my-msi-store.firebaseapp.com",
-    projectId: "my-msi-store",
-    storageBucket: "my-msi-store.appspot.com",
-    messagingSenderId: "296166125323",
-    appId: "1:296166125323:web:aa15dec2355bd283333c0e",
-    measurementId: "G-H2F4XSKVEZ"
+    apiKey: "AIzaSyAb3DtUFKvJ8Wc6yfimLe_yrm9vAUixIcg",
+    authDomain: "book-store-64e36.firebaseapp.com",
+    projectId: "book-store-64e36",
+    storageBucket: "book-store-64e36.appspot.com",
+    messagingSenderId: "449910523598",
+    appId: "1:449910523598:web:f075142124cec4ad4bb29f",
+    measurementId: "G-2DR9E3P9JX"
 };
 
 // Initialize Firebase
