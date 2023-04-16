@@ -6,11 +6,7 @@ function InforAuthor() {
     return (
         <div className={cx('author')}>
             <div className={cx('desc')}>
-                This website was created by
-                <a href="https://www.facebook.com/theanhnguyenmgt"
-                    className={cx("name")}
-                    alt="theanh"
-                > TheAnhNguyen </a> form 9/2022.
+                One Team : Thế Anh & Minh Tâm
             </div>
         </div>
     );
