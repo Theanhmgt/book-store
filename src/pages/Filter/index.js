@@ -83,8 +83,6 @@ function Filter() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filter])
 
-
-
     return (
         <Container className={cx('wrapper')}>
             {isLoading && <LoadingSpinner />}
