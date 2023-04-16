@@ -26,7 +26,7 @@ function FilterNav({ filter, setFilter }) {
     const handleSetPriceFilter = (e) => {
         setTempFilter({
             ...tempFilter,
-            newPrice_gte: e.target.value - 100,
+            newPrice_gte: e.target.value - 100000,
             newPrice_lte: e.target.value
         })
         setToogleList({ ...toogleList, price: !toogleList.price })

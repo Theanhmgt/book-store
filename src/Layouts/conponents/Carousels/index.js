@@ -33,8 +33,7 @@ const Carousels = () => {
                 <div className={cx('left')}>SÁCH MỚI</div>
                 <Link className={cx('right')} to="/filter">Xem tất cả sách</Link>
             </div>
-
-            {/* <Carousel /> */}
+            <Carousel />
         </Container>
     );
 }

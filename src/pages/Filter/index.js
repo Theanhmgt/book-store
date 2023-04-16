@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Pageing from "~/components/Pageing";
 import classNames from "classnames/bind";
 import { useMediaQuery } from 'react-responsive'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MdSort } from 'react-icons/md';
 import queryString from "query-string"
@@ -19,9 +19,11 @@ const cx = classNames.bind(style)
 
 function Filter() {
     const navigate = useNavigate();
+    const location = useLocation()
     const [isLoading, setIsLoading] = useState(false)
     let isMobile = useMediaQuery({ query: '(max-width: 576px)' })
     let isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+
 
     const [showDesc, setShowDesc] = useState(false)
     const [showNavFillter, setShowNavFillter] = useState(!isMobile)
@@ -34,7 +36,7 @@ function Filter() {
     })
     const [filter, setFilter] = useState({
         _page: 1,
-        _limit: (isMobile && 12) || (isTabletOrMobile && 9) || 12
+        _limit: (isMobile && 12) || (isTabletOrMobile && 9) || 12,
     })
 
     const handlePageChange = (newPages) => {
@@ -45,8 +47,18 @@ function Filter() {
     }
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         document.title = 'Tất cả sản phẩm'
+        if (location.state) {
+            setFilter({
+                ...filter,
+                categorySlug: location.state
+            })
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
     }, [product]);
 
     useEffect(() => {
@@ -71,6 +83,8 @@ function Filter() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filter])
 
+
+
     return (
         <Container className={cx('wrapper')}>
             {isLoading && <LoadingSpinner />}
@@ -85,7 +99,7 @@ function Filter() {
                 )}
                 <Col lg={10} md={9} sm={12}>
                     <div className={cx('sort-head')}>
-                        {!isMobile ? <span>Số sách 1- {product.length} của {pagination._totalRows}</span> :
+                        {!isMobile ? <span>Số sách 1 - {product.length} trong tổng số {pagination._totalRows}</span> :
                             <div
                                 className={cx('showOnMobile')}
                                 onClick={() => setShowNavFillter(!showNavFillter)}

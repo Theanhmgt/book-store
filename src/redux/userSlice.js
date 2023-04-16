@@ -92,72 +92,9 @@ export const userSlice = createSlice({
                 }
             }
         }
-    },
-    extraReducers: (builder) => {
-        builder
-            .addCase(userFetch.pending, (state, action) => {
-                state.status = 'loading'
-            })
-            .addCase(userFetch.fulfilled, (state, action) => {
-                state.status = 'done'
-                if (action.payload[0]) {
-                    state.value = action.payload[0]
-                    localStorage.setItem("userData", JSON.stringify(action.payload[0]))
-                }
-            })
-            .addCase(userPost.pending, (state, action) => {
-                state.status = 'loading'
-            })
-            .addCase(userPost.fulfilled, (state, action) => {
-                state.status = 'doneeeee'
-                // state.value = action.payload
-                // localStorage.setItem("userData", JSON.stringify(action.payload))
-            })
-
-            .addCase(userPut.pending, (state, action) => {
-                state.status = 'loading'
-            })
-            .addCase(userPut.fulfilled, (state, action) => {
-                state.status = 'done'
-                state.value = action.payload
-            })
     }
 })
-export const userFetch = createAsyncThunk("user,userFetch",
-    async (userData) => {
-        const { email, password } = userData
-        const responceJSON = await fetch(`https://json-server-sand.vercel.app/api/users?email=${email}&password=${password}`)
-        const responce = await responceJSON.json()
-        return responce
-    }
-)
-export const userByEmailFetch = createAsyncThunk("userByGmail,userByEmailFetch",
-    async (email) => {
-        const responceJSON = await fetch(`https://json-server-sand.vercel.app/api/users?email=${email}`)
-        const responce = await responceJSON.json()
-        return responce
-    }
-)
-export const userPost = createAsyncThunk("user,userPost",
-    async (user) => {
-        fetch('https://json-server-sand.vercel.app/api/users/', {
-            method: 'POST',
-            body: JSON.stringify(user),
-            headers: { 'Content-type': 'application/json; charset=UTF-8', }
-        })
-        return user
-    }
-)
-export const userPut = createAsyncThunk("user,userPut",
-    async (user) => {
-        fetch(`https://json-server-sand.vercel.app/api/users/${user.id}`, {
-            method: 'PUT',
-            body: JSON.stringify(user),
-            headers: { 'Content-Type': 'application/json' }
-        })
-        localStorage.setItem("userData", JSON.stringify(user))
-        return user
-    }
-)
+
+
 export const { addToCart, removeCart, increaseCart, decreaseCart, getTotal, setCart, logout, setUser } = userSlice.actions
 export default userSlice.reducer;

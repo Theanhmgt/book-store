@@ -17,7 +17,7 @@ function ProductsType({ name, category, img }) {
 
     useEffect(() => {
         const fetAPI = async () => {
-            const responceJSON = await fetch(`https://json-server-sand.vercel.app/api/data?categorySlug=${category}&_page=1&_limit=${isTabletOrMobile ? 2 : 4}`)
+            const responceJSON = await fetch(`http://localhost:5000/api/data?categorySlug=${category}&_page=1&_limit=${isTabletOrMobile ? 2 : 4}`)
             const responce = await responceJSON.json()
             const { data } = responce
             setData(data)
@@ -40,7 +40,7 @@ function ProductsType({ name, category, img }) {
                 </Col>
                 <Col lg={10} md={9} sm={12} >
                     <Row>
-                        {/* {data.length > 0 && (
+                        {data.length > 0 && (
                             data.map((ele, index) => (
                                 <Col lg={3} sm={6} xs={6} key={index} >
                                     <Product
@@ -49,7 +49,7 @@ function ProductsType({ name, category, img }) {
                                     />
                                 </Col>
                             ))
-                        )} */}
+                        )}
                         {isLoading ? (
                             Array(isMobile ? 2 : 4)
                                 .fill()

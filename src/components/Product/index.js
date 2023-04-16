@@ -5,6 +5,7 @@ import { IoIosArrowDown, IoIosArrowUp, IoMdClose } from "react-icons/io";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { TiPencil } from "react-icons/ti";
 import { HiOutlineHeart } from "react-icons/hi";
+import { TbDiscount2 } from "react-icons/tb";
 import { memo } from "react";
 import { Row, Col } from "react-bootstrap";
 import { useMediaQuery } from 'react-responsive'
@@ -81,19 +82,10 @@ function Product({
                     onClick={() => handleClickItem(data.id)}
                 >
                     <>
-                        {data.condition.includes("in stock") ? (
-                            <div>
-                                <BsFillCheckCircleFill className={cx('stock-icon')} />
-                                <div className={cx('tilte')}>{data.condition}</div>
-                            </div>
-
-                        ) : (
-                            <div>
-                                <BsFillTelephoneXFill className={cx('phone-icon')} />
-                                <div className={cx('tilte')}>{data.condition}</div>
-                            </div>
-                        )
-                        }
+                        <div>
+                            <TbDiscount2 className={cx('discount-icon')} />
+                            <div className={cx('tilte')}>{data.condition}</div>
+                        </div>
                         <div className={cx("img")}>
                             <img src={data.images[0]} alt="" />
                         </div>

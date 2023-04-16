@@ -41,12 +41,14 @@ function Navbar() {
             path: "/filter"
         },
         {
-            display: "Sách Ngoại Ngữ",
-            path: "/filter"
+            display: "Sách Kỹ năng sống",
+            path: "/filter",
+            value: "Kỹ năng sống",
         },
         {
             display: "Sách Kiến Thức Bách Khoa",
-            path: "/filter"
+            path: "/filter",
+            value: "Kiến Thúc Bách Khoa"
         }
     ]
     const handleShowInput = () => {
@@ -82,7 +84,7 @@ function Navbar() {
                             {
                                 MAIN_NAV.map((item, index) => (
                                     <div key={index} className={cx('link')}>
-                                        <Link to={item.path}>{item.display}</Link>
+                                        <Link to={item.path} state={item.value}>{item.display}</Link>
                                     </div>
                                 ))
                             }

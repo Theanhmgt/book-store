@@ -41,18 +41,11 @@
         opacity: 1;
     }
 }
-.stock-icon {
-    font-size: 10px;
+.discount-icon {
+    font-size: 15px;
     color: var(--green);
     & + div {
         color: var(--green);
-    }
-}
-.phone-icon {
-    font-size: 10px;
-    color: var(--red);
-    & + div {
-        color: var(--red);
     }
 }
 .tilte {

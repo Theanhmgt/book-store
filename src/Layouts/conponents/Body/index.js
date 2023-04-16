@@ -13,8 +13,8 @@ function Body() {
     return (
         <Container>
             <InforAuthor />
-            <ProductsType name={'Ebook'} img={book} category={'laptop-gaming'} />
-            <ProductsType name={'Sách Mới'} img={ebook2} category={'pc-gaming'} />
+            <ProductsType name={'Ebook'} img={book} category={'Ebook'} />
+            <ProductsType name={'Sách Luyện Thi THPT Quốc Gia'} img={ebook2} category={'Sách Luyện Thi THPT Quốc Gia'} />
             <Brands />
             <Review />
         </Container>
